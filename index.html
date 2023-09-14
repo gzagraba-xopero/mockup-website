@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Markdown Editor</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.js" 
+         integrity="sha512-WUj/9d0+WiqmZ3fHLdrjLmuwMnattuKZKOcN03r4++v6IDlTO27Ow/+/2zoiqzDWKn3uDa9skO6Vun5wWKJ9sg==" 
+         crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/lodash@4.16.0"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sanitize-html/1.27.2/sanitize-html.min.js" 
+         integrity="sha512-ov7OHRLbyCepKhkNeablOKagxc6N7BRJ6r8nqlL34QVaUcn5O7HYKcoT1XYoSLI53ywG8RbM2/2hyV4UgLUoww==" 
+         crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="checkbox.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div class="navbar">
+                <div class="switch-toggle">
+                    <a>Toggle Views </a>
+                    <input id="editorFullscreen" @click="toggleEditorView" type="checkbox" checked="checked"/>
+                    <label for="editorFullscreen"></label>
+                    <input id="previewFullscreen" @click="togglePreviewView" type="checkbox" checked="checked"/>
+                    <label for="previewFullscreen"></label>
+                </div>
+            </div>
+            <div class="edit-area" v-show="editorShow">
+                <h1 class="area-title">Editor</h1>
+                <div class="toolbar">
+                </div>
+                <textarea id="editor" v-model="markdownText" v-on:input="update" :placeholder="sampleText"></textarea>
+            </div>
+            <div class="preview-area" v-show="previewShow">
+                <h1 class="area-title">Preview</h1>
+                <div id="preview" v-html="previewMarkdown"></div>
+            </div>
+        </div>
+    </body>
+    <script src="editor.js"></script>
+</html>

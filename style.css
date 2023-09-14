@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body {
+    padding: 20px;
+}
+
+#app {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+}
+
+.navbar {
+    width: 100%;
+    text-align: center;
+}
+
+.switch-toggle {
+    float: right;
+}
+
+.switch-toggle a {
+    margin: 5px;
+    border-left: thin;
+    font-size: 0.75em;
+}
+
+h1.area-title {
+    padding: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.preview-area, .edit-area {
+    height: 90vh;
+    margin: 5px;
+    padding: 10px;
+    width: 45%;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+textarea, #preview {
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    height: 80vh;
+    overflow: auto;
+}
+
+textarea {
+    font-size: 20px;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    border-radius: 5px;
+    min-width: 95%;
+    resize: none;
+}
+
+/* MARKDOWN STYLES */
+#preview ul, ol{
+    margin-left: 2em;
+}
